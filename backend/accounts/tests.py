@@ -1,3 +1,4 @@
+hafta2-jwt-auth-abdullah
 from django.contrib.auth import get_user_model
 from rest_framework.test import APITestCase
 
@@ -79,3 +80,8 @@ class AuthFlowTests(APITestCase):
         )
         self.assertEqual(res.status_code, 200, res.content)
         self.assertIn('access', res.data)
+=======
+from django.test import TestCase
+
+# Create your tests here.
+main

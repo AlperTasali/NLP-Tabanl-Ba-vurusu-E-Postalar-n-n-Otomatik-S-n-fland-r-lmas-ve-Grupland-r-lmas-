@@ -1,3 +1,4 @@
+hafta2-jwt-auth-abdullah
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -50,3 +51,8 @@ class ProfileView(generics.RetrieveUpdateAPIView):
 
     def get_object(self):
         return self.request.user
+=======
+from django.shortcuts import render
+
+# Create your views here.
+main

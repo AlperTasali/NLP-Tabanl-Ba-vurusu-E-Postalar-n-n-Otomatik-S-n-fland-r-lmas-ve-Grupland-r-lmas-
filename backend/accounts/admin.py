@@ -1,4 +1,5 @@
 from django.contrib import admin
+hafta2-jwt-auth-abdullah
 
 from .models import Company, Role, User
 
@@ -29,3 +30,11 @@ class UserAdmin(admin.ModelAdmin):
         ('İzinler', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         ('Tarihler', {'fields': ('last_login', 'date_joined')}),
     )
+=======
+from django.contrib.auth.admin import UserAdmin
+
+from .models import User
+
+
+admin.site.register(User, UserAdmin)
+main
