@@ -1,3 +1,7 @@
+ user-company-role-tasarimi-postgresql-umut
+=======
+hafta2-jwt-auth-abdullah
+ main
 """
 URL configuration for config project.
 
@@ -15,8 +19,29 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+ user-company-role-tasarimi-postgresql-umut
 from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
+=======
+from django.urls import include, path
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/auth/', include('accounts.urls')),
+]
+=======
+
+from django.contrib import admin
+from django.urls import path
+from .views import health_check
+
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("api/health/", health_check),
+]
+main
+ main
