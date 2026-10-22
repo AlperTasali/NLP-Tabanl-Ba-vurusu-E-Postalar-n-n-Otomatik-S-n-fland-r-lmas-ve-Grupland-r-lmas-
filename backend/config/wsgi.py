@@ -1,4 +1,7 @@
+ user-company-role-tasarimi-postgresql-umut
+=======
 hafta2-jwt-auth-abdullah
+ main
 """
 WSGI config for config project.
 
@@ -15,6 +18,8 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
 
 application = get_wsgi_application()
+ user-company-role-tasarimi-postgresql-umut
+=======
 =======
 """
 WSGI config for config project.
@@ -33,3 +38,4 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
 
 application = get_wsgi_application()
 main
+ main

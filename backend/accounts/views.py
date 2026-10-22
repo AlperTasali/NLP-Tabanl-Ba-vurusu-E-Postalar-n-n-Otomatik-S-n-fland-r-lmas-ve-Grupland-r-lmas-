@@ -1,3 +1,8 @@
+ user-company-role-tasarimi-postgresql-umut
+from django.shortcuts import render
+
+# Create your views here.
+=======
 hafta2-jwt-auth-abdullah
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
@@ -56,3 +61,4 @@ from django.shortcuts import render
 
 # Create your views here.
 main
+ main

@@ -1,3 +1,8 @@
+ user-company-role-tasarimi-postgresql-umut
+from django.contrib import admin
+
+# Register your models here.
+=======
 from django.contrib import admin
 hafta2-jwt-auth-abdullah
 
@@ -38,3 +43,4 @@ from .models import User
 
 admin.site.register(User, UserAdmin)
 main
+ main

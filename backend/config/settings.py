@@ -1,4 +1,7 @@
+ user-company-role-tasarimi-postgresql-umut
+=======
 hafta2-jwt-auth-abdullah
+ main
 """
 Django settings for config project.
 
@@ -11,9 +14,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
+ user-company-role-tasarimi-postgresql-umut
+from pathlib import Path
+=======
 from datetime import timedelta
 from pathlib import Path
 import os
+ main
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,6 +30,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+ user-company-role-tasarimi-postgresql-umut
+SECRET_KEY = 'django-insecure-=dv8pxsamx_grzuoe5%pbd^bddr)2+7-z8)r$5a_*h*n-!ie_0'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+ALLOWED_HOSTS = []
+=======
 SECRET_KEY = os.environ.get(
     'DJANGO_SECRET_KEY',
     'django-insecure-=dv8pxsamx_grzuoe5%pbd^bddr)2+7-z8)r$5a_*h*n-!ie_0',
@@ -34,6 +49,7 @@ DEBUG = os.environ.get('DJANGO_DEBUG', 'True') == 'True'
 ALLOWED_HOSTS = [
     h.strip() for h in os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(',') if h.strip()
 ]
+ main
 
 
 # Application definition
@@ -45,8 +61,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+ user-company-role-tasarimi-postgresql-umut
+        'accounts',
+=======
     'rest_framework',
     'accounts',
+ main
 ]
 
 MIDDLEWARE = [
@@ -85,6 +105,16 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
+ user-company-role-tasarimi-postgresql-umut
+        'NAME': 'ats_db',
+        'USER': 'postgres',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+
+=======
         'NAME': os.environ.get('POSTGRES_DB', 'ats_db'),
         'USER': os.environ.get('POSTGRES_USER', 'postgres'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD', ''),
@@ -110,6 +140,7 @@ SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('Bearer',),
 }
 
+ main
 
 # Password validation
 # https://docs.djangoproject.com/en/6.1/ref/settings/#auth-password-validators
@@ -156,6 +187,9 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+ user-company-role-tasarimi-postgresql-umut
+AUTH_USER_MODEL = 'accounts.User'
+=======
 AUTH_USER_MODEL = 'accounts.User'
 =======
 """
@@ -302,3 +336,4 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8081",
 ]
 main
+ main

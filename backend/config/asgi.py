@@ -1,4 +1,7 @@
+ user-company-role-tasarimi-postgresql-umut
+=======
 hafta2-jwt-auth-abdullah
+ main
 """
 ASGI config for config project.
 
@@ -15,6 +18,8 @@ from django.core.asgi import get_asgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
 
 application = get_asgi_application()
+ user-company-role-tasarimi-postgresql-umut
+=======
 =======
 """
 ASGI config for config project.
@@ -33,3 +38,4 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
 
 application = get_asgi_application()
 main
+ main
