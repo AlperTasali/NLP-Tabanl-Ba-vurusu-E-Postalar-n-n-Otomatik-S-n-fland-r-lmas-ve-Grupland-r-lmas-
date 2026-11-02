@@ -1,4 +1,4 @@
- user-company-role-tasarimi-postgresql-umut
+ 
 from django.contrib import admin
 
 # Register your models here.
