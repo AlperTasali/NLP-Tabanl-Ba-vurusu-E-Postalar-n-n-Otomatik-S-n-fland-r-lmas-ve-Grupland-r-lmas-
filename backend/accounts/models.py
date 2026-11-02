@@ -1,7 +1,5 @@
- user-company-role-tasarimi-postgresql-umut
-=======
-hafta2-jwt-auth-abdullah
- main
+ 
+
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
 from django.db.models.functions import Lower
@@ -117,11 +115,9 @@ class User(AbstractUser):
         super().save(*args, **kwargs)
 
     def __str__(self):
- user-company-role-tasarimi-postgresql-umut
+ 
         return self.email
-=======
-        return self.email
-=======
+
 
 from django.contrib.auth.models import AbstractUser
 from django.db import models
@@ -140,5 +136,3 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.email
-main
- main
