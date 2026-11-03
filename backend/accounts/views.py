@@ -1,4 +1,4 @@
- user-company-role-tasarimi-postgresql-umut
+ 
 from django.shortcuts import render
 
 # Create your views here.

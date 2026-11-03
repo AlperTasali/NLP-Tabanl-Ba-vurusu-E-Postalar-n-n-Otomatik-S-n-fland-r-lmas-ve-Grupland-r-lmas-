@@ -1,4 +1,4 @@
- user-company-role-tasarimi-postgresql-umut
+ 
 =======
 hafta2-jwt-auth-abdullah
  main
@@ -18,7 +18,7 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
 
 application = get_wsgi_application()
- user-company-role-tasarimi-postgresql-umut
+ 
 =======
 =======
 """

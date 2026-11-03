@@ -1,4 +1,4 @@
- user-company-role-tasarimi-postgresql-umut
+ 
 from django.test import TestCase
 
 # Create your tests here.

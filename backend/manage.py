@@ -1,7 +1,4 @@
- user-company-role-tasarimi-postgresql-umut
-=======
-hafta2-jwt-auth-abdullah
- main
+
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
 import os
@@ -24,9 +21,7 @@ def main():
 
 if __name__ == '__main__':
     main()
- user-company-role-tasarimi-postgresql-umut
-=======
-=======
+
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
 import os
@@ -50,4 +45,4 @@ def main():
 if __name__ == '__main__':
     main()
 main
- main
+ 
