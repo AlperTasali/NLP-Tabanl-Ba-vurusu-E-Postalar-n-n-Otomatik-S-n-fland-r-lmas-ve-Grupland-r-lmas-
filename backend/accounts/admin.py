@@ -1,46 +1,120 @@
- user-company-role-tasarimi-postgresql-umut
+
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
-# Register your models here.
-=======
-from django.contrib import admin
-hafta2-jwt-auth-abdullah
-
-from .models import Company, Role, User
-
-
-@admin.register(Company)
-class CompanyAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'is_active', 'created_at')
-    list_filter = ('is_active',)
-    search_fields = ('name', 'email', 'tax_number')
+from .models import Role, User
 
 
 @admin.register(Role)
 class RoleAdmin(admin.ModelAdmin):
-    list_display = ('code', 'name', 'created_at')
-    search_fields = ('code', 'name')
+    list_display = (
+        "code",
+        "name",
+        "created_at",
+    )
+
+    search_fields = (
+        "code",
+        "name",
+    )
 
 
 @admin.register(User)
-class UserAdmin(admin.ModelAdmin):
-    list_display = ('email', 'company', 'role', 'is_staff', 'is_active', 'date_joined')
-    list_filter = ('is_staff', 'is_active', 'role', 'company')
-    search_fields = ('email', 'first_name', 'last_name')
-    readonly_fields = ('last_login', 'date_joined')
-    fieldsets = (
-        (None, {'fields': ('email', 'password')}),
-        ('Kişisel', {'fields': ('first_name', 'last_name')}),
-        ('Şirket / Rol', {'fields': ('company', 'role')}),
-        ('İzinler', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
-        ('Tarihler', {'fields': ('last_login', 'date_joined')}),
+class UserAdmin(BaseUserAdmin):
+    list_display = (
+        "email",
+        "company",
+        "role",
+        "is_staff",
+        "is_active",
+        "date_joined",
     )
-=======
-from django.contrib.auth.admin import UserAdmin
 
-from .models import User
+    list_filter = (
+        "is_staff",
+        "is_active",
+        "role",
+        "company",
+    )
 
+    search_fields = (
+        "email",
+        "first_name",
+        "last_name",
+    )
 
-admin.site.register(User, UserAdmin)
-main
- main
+    ordering = ("email",)
+
+    fieldsets = (
+        (
+            None,
+            {
+                "fields": (
+                    "email",
+                    "password",
+                ),
+            },
+        ),
+        (
+            "Kişisel Bilgiler",
+            {
+                "fields": (
+                    "first_name",
+                    "last_name",
+                ),
+            },
+        ),
+        (
+            "Şirket ve Rol",
+            {
+                "fields": (
+                    "company",
+                    "role",
+                ),
+            },
+        ),
+        (
+            "Yetkiler",
+            {
+                "fields": (
+                    "is_active",
+                    "is_staff",
+                    "is_superuser",
+                    "groups",
+                    "user_permissions",
+                ),
+            },
+        ),
+        (
+            "Tarihler",
+            {
+                "fields": (
+                    "last_login",
+                    "date_joined",
+                ),
+            },
+        ),
+    )
+
+    readonly_fields = (
+        "last_login",
+        "date_joined",
+    )
+
+    add_fieldsets = (
+        (
+            None,
+            {
+                "classes": ("wide",),
+                "fields": (
+                    "email",
+                    "company",
+                    "role",
+                    "first_name",
+                    "last_name",
+                    "password1",
+                    "password2",
+                ),
+            },
+        ),
+    )

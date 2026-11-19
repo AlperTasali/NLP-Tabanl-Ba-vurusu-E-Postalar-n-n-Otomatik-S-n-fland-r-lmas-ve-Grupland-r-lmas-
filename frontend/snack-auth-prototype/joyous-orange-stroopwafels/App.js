@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-
+import DashboardScreen from './DashboardScreen';
 import {
   View,
   Text,
@@ -234,6 +234,7 @@ const useAuthStore = create((set) => ({
 
 export default function App() {
   const [screen, setScreen] = useState('welcome');
+  const [demoMode, setDemoMode] = useState(false);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -394,7 +395,13 @@ export default function App() {
   // ========================================
   // 11. LOADING SCREEN
   // ========================================
-
+if (demoMode) {
+  return (
+    <DashboardScreen
+      onBack={() => setDemoMode(false)}
+    />
+  );
+}
   if (restoring) {
     return (
       <View style={styles.center}>
@@ -485,25 +492,37 @@ export default function App() {
               based on your interest and study major
             </Text>
 
-            <View style={styles.welcomeButtons}>
-              <TouchableOpacity
-                style={styles.welcomeLogin}
-                onPress={() => setScreen('login')}
-              >
-                <Text style={styles.welcomeLoginText}>
-                  Login
-                </Text>
-              </TouchableOpacity>
+         
+<View style={styles.welcomeButtons}>
+  <TouchableOpacity
+    style={styles.welcomeLogin}
+    onPress={() => setScreen('login')}
+  >
+    <Text style={styles.welcomeLoginText}>
+      Login
+    </Text>
+  </TouchableOpacity>
 
-              <TouchableOpacity
-                style={styles.welcomeRegister}
-                onPress={() => setScreen('register')}
-              >
-                <Text style={styles.welcomeRegisterText}>
-                  Register
-                </Text>
-              </TouchableOpacity>
-            </View>
+  <TouchableOpacity
+    style={styles.welcomeRegister}
+    onPress={() => setScreen('register')}
+  >
+    <Text style={styles.welcomeRegisterText}>
+      Register
+    </Text>
+  </TouchableOpacity>
+</View>
+
+{/* DASHBOARD DEMO BUTONU - YENİ EKLENEN KISIM */}
+<TouchableOpacity
+  style={styles.outlineButton}
+  onPress={() => setDemoMode(true)}
+>
+  <Text style={styles.outlineText}>
+    Dashboard Demo
+  </Text>
+</TouchableOpacity>
+
           </View>
 
         </View>
